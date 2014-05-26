@@ -3,6 +3,11 @@ RSpec is a testing tool for the Ruby programming language. RSpec is designed to 
 
 #### Basic RSpec Setup Instructions for Rails
 1. Add Gem to gemfile (in both developement and test groups)
+```
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+```
 2. Run 'bundle install'
 3. Initialize spec directory by running 'rails generate rspec:install' --- this will create a spec directory and put a spec_helper.rb file inside of it. This spec helper file contains setup and configuration for rspec.
 4. In the file where you'll be writing tests (users_controller_spec.rb, for instance), type "require 'spec_helper'" at the top of the file.
@@ -23,7 +28,7 @@ expect(:assigns).to eq <value>
 
 is basically equivalent to the variable @assigns in whatever action you're testing
 
-• Test one thing at a time! Each test should have only one expect or should statement. So not this:
+• Test one thing at a time! Each test should have only one expect or should statement.
 
 • Move repeated setup statements to the top of a block and make them generally available. Here is an example (notice the let statement at the top, making a user available during each of the tests nested within this block): 
 
@@ -55,7 +60,7 @@ end
 
 Balance such attempts to make the tests DRY with the need to make them readable and understandable. In other words, moving setup blocks too far away from where they're used can lead to confusion when developers are seeing the code for the first time.
 
-• Inside the spec directory, create a controllers folder where you can place your controller tests and a models folder where you can test your models. A spec directory might look like the following:
+• Inside the spec directory, create a controllers folder where you can place your controller tests and a models folder where you can test your models. A spec directory might have the following structure:
 
 ```
 -spec
@@ -79,14 +84,14 @@ Balance such attempts to make the tests DRY with the need to make them readable 
 
 • Another intro to [testing with RSpec](http://blog.teamtreehouse.com/an-introduction-to-rspec).
 
-• [Series on testing Rails](http://everydayrails.com/2012/03/12/testing-series-intro.html (a little outdate, but awesome)) using RSpec. A little old (2012), but good stuff. 
+• [Series on testing Rails](http://everydayrails.com/2012/03/12/testing-series-intro.html) using RSpec. A little outdated (2012), but good stuff. 
 
 • [Testing controllers](http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html).
 
 • [How Thoughtbot uses RSpec](http://robots.thoughtbot.com/how-we-test-rails-applications) to test Rails.
 
 
-#### Often associated Gems
+#### Often Associated Gems
 + Faker
 + factoryGirl
 + Capybara
