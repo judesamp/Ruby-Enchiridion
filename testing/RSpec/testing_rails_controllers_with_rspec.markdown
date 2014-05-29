@@ -24,7 +24,7 @@ end
 • When testing Rails controllers, the :assigns in 
 
 ```
-expect(:assigns(:events)).to eq <value>
+expect(assigns(:events)).to eq <value>
 ```
 
 is basically equivalent to the variable @events in whatever action you're testing
