@@ -1,5 +1,7 @@
-#### Rspec
+## Rspec
 RSpec is a testing tool for the Ruby programming language. RSpec is designed to help programmers do Test-Driven Development (TDD). RSpec is a commonly used testing tool in the Rails community.
+
+### Testing Rails Controllers with RSpec
 
 #### Basic RSpec Setup Instructions for Rails
 1. Add Gem to gemfile (in both developement and test groups)
@@ -15,7 +17,6 @@ end
 6. Runs the tests with 'rake spec.' This will run all the tests in the spec directory. To run more specific tests, drill down with something like 'rake spec/controllers/users_controller_spec.rb' You can also use 'rspec' in place of the rake command.
 
 
-
 #### Tips
 • Be sure you close all of your 'do-end' blocks. Their lack can cause all sorts of fun confusion.
 
@@ -23,10 +24,10 @@ end
 • When testing Rails controllers, the :assigns in 
 
 ```
-expect(:assigns).to eq <value>
+expect(:assigns(:events)).to eq <value>
 ```
 
-is basically equivalent to the variable @assigns in whatever action you're testing
+is basically equivalent to the variable @events in whatever action you're testing
 
 • Test one thing at a time! Each test should have only one expect or should statement.
 
